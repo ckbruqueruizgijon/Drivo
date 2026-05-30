@@ -1,0 +1,51 @@
+.detalle-container {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    background-color: #f2f2f2 !important;
+}
+
+.card-detalle {
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.reserva-header {
+    background-color: #152D51;
+    color: white;
+    padding: 2rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.btn-full {
+    width: 100%;
+    background-color: #152D51;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-full:hover {
+    background-color: #7BD5AB;
+    color: #152D51;
+    transform: translateY(-2px);
+}
+
+.rounded-custom {
+    border-radius: 0.8rem !important;
+}
+
+.info-label {
+    color: #888;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: #152D51;
+    font-weight: 700;
+}

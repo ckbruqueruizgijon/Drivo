@@ -1,0 +1,475 @@
+/* 
+    Color blanco: #FFF
+    Color de fondo: #f2f2f2
+    Color principal: #152D51
+    Color secundario: #7BD5AB
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+/* HEADER */
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.logo__container {
+    width: 200px;
+}
+
+.logo {
+    width: 100%;
+}
+
+.links__container {
+    width: 400px;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: #152D51;
+    transition: color .3s;
+}
+
+.link:hover {
+    color: #7BD5AB;
+}
+
+.icon--user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #152D51;
+    margin-top: 5px;
+    transition: color .3s;
+}
+
+.icon:hover {
+    color: #7BD5AB;
+}
+
+/* HERO */
+
+.hero__container {
+    width: 100%;
+}
+
+.hero {
+    width: 100%;
+}
+
+/* OFERTAS */
+
+.main__container {
+    max-width: 1200px;
+    padding-top: 1rem;
+    color: #152D51;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+
+/* Contenedor Principal de las Cards */
+.ofertas__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 2rem;
+}
+
+/* Card */
+.oferta {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1.5rem;
+    overflow: visible;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* El Título */
+.modelo {
+    background-color: #152D51;
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    width: 180px;
+    margin: 0 auto;
+    position: absolute;
+    top: -15px; /* Lo sube para que pise el borde */
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+/* Contenedor de la Imagen */
+.photo__container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Listado de Información */
+.info__container {
+    padding: 1.5rem;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.info__container p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Pie de Tarjeta (Precio y Botón) */
+.reservar__container {
+    background-color: #152D51;
+    margin: 0 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    color: #fff;
+}
+
+.price__section {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.price-value {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Botón Blanco */
+.btn__reservar {
+    background-color: #fff;
+    color: #152D51;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.btn__reservar:hover {
+    background-color: #7BD5AB;
+}
+
+/* NOSOTROS */
+.nosotros__container {
+    background-color: #fff;
+    max-width: 100%;
+    margin: 4rem auto;
+    padding: 2rem;
+    color: #152D51;
+}
+
+.nosotros__container h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contenedor Flex para Texto e Imagen */
+.nosotros__container--cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Bloque de Texto */
+.texto {
+    flex: 1;
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+.texto p {
+    margin-bottom: 1.5rem;
+}
+
+.texto ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.texto li {
+    margin-bottom: 0.8rem;
+}
+
+.texto strong {
+    font-weight: bold;
+}
+
+/* Bloque de Imagen */
+.image {
+    flex: 1;
+}
+
+.image__img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #152D51;
+}
+
+/* FOOTER */
+.footer__container {
+    margin-top: -65px;
+    background-color: #152D51;
+    color: #ffffff;
+    padding-top: 3rem;
+    font-family: sans-serif;
+}
+
+.footer__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 2rem 3rem 2rem;
+}
+
+.footer__column {
+    flex: 1;
+}
+
+/* Títulos de las columnas */
+.footer__column h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Texto de la primera columna */
+.footer__column p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #d1d1d1;
+}
+
+.slogan {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+/* Enlaces */
+.footer__links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links li {
+    margin-bottom: 10px;
+}
+
+.footer__links a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer__links a:hover {
+    color: #7BD5AB; /* Color secundario al pasar el ratón */
+}
+
+/* Mapa */
+.map__container {
+    border: 2px solid #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 150px;
+}
+
+/* Franja inferior de Copyright */
+.footer__bottom {
+    background-color: #f2f2f2;
+    color: #152D51;
+    text-align: center;
+    padding: 0.3rem 0;
+    font-size: 0.75rem;
+    border-top: 1px solid #ccc;
+}
+
+.footer__bottom p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nosotros__container--cont {
+        flex-direction: column;
+    }
+    
+    .nosotros__container h2 {
+        font-size: 2rem;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .map__container {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* --- HEADER & NAVIGATION (Bootstrap Optimized) --- */
+
+/* Ajustamos el contenedor del header para que sea flexible */
+.header__container {
+    background-color: white;
+    min-height: 80px; /* Cambiado de height a min-height para que crezca al abrir el menú */
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    z-index: 1050;
+    width: 100%;
+}
+
+/* Enlaces del Nav */
+.nav-link {
+    text-decoration: none;
+    color: #152D51 !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER: Color verde Drivo */
+.nav-link:hover {
+    color: #7BD5AB !important;
+    transform: translateY(-2px);
+}
+
+/* Contenedor del icono de usuario */
+.icon--user {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.icon--user:hover {
+    background-color: #eee !important;
+    transform: scale(1.1);
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #152D51;
+    transition: color .3s;
+}
+
+/* --- RESPONSIVE (Móvil y Tablet) --- */
+
+@media (max-width: 991px) {
+    /* El menú desplegable */
+    .navbar-collapse {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0 0 1rem 1rem;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        /* Asegura que aparezca por encima del contenido */
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .nav-link {
+        padding: 15px 0 !important;
+        border-bottom: 1px solid #f8f9fa;
+        text-align: center;
+    }
+
+    /* Evita que el botón de usuario se vea raro en móvil */
+    .icon--user {
+        margin: 15px auto 0 auto;
+    }
+}
+
+/* --- UTILIDADES GENERALES --- */
+.text-primary-drivo { color: #152D51 !important; }
+.text-secondary-drivo { color: #7BD5AB !important; }
+.bg-primary-drivo { background-color: #152D51 !important; }
+.bg-secondary-drivo { background-color: #7BD5AB !important; }
+.rounded-custom { border-radius: 0.8rem !important; }
+.rounded-custom-lg { border-radius: 1.5rem !important; }
+.border-transparent { border-color: rgba(255,255,255,0.2) !important; }
+.opacity-85 { opacity: 0.85; }
+.icon-xl { font-size: 4rem; }
+
