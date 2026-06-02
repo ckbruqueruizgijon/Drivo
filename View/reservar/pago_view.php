@@ -90,7 +90,7 @@
                                 <div class="col-6">
                                     <label class="form-label fw-bold">Expiración</label>
                                     <input type="text" id="expiracion" name="expiracion" class="form-control bg-light" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" maxlength="5" inputmode="numeric" required>
-                                    <div class="invalid-feedback">Formato requerido inválido (MM/YY).</div>
+                                    <div id="error-expiracion" class="invalid-feedback">Formato requerido inválido (MM/YY).</div>
                                 </div>
                                 <div class="col-6">
                                     <label class="form-label fw-bold">CVV</label>
@@ -122,8 +122,37 @@
         (() => {
           'use strict'
           const forms = document.querySelectorAll('.needs-validation')
+          const expInput = document.getElementById('expiracion');
+          const errorFeedback = document.getElementById('error-expiracion');
+
           Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
+              
+              // --- NUEVA CAPA DE VALIDACIÓN TEMPORAL (TARJETA CADUCADA) ---
+              if (expInput && expInput.value.length === 5) {
+                  const partes = expInput.value.split('/');
+                  const mesInput = parseInt(partes[0], 10);
+                  // Convertimos el año '26' en entero completo '2026'
+                  const anioInput = parseInt('20' + partes[1], 10);
+
+                  // Obtener la fecha actual del sistema
+                  const fechaActual = new Date();
+                  const mesActual = fechaActual.getMonth() + 1; // getMonth() va de 0 a 11
+                  const anioActual = fechaActual.getFullYear();
+
+                  // Comparamos si el año es menor, o si siendo el mismo año, el mes ya pasó
+                  if (anioInput < anioActual || (anioInput === anioActual && mesInput < mesActual)) {
+                      // Forzamos el fallo del campo usando el sistema nativo de HTML5
+                      expInput.setCustomValidity("Tarjeta caducada");
+                      if (errorFeedback) {
+                          errorFeedback.innerText = "La tarjeta introducida está caducada.";
+                      }
+                  } else {
+                      // Si todo está correcto, limpiamos cualquier error personalizado previo
+                      expInput.setCustomValidity("");
+                  }
+              }
+
               if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
@@ -132,11 +161,16 @@
             }, false)
           })
 
-          // Máscara interactiva automática para el campo Expiración (Añade la barra '/' sola al escribir el mes)
-          const expInput = document.getElementById('expiracion');
+          // Máscara interactiva automática para el campo Expiración (Añade la barra '/' sola)
           if(expInput) {
               expInput.addEventListener('input', function(e) {
-                  let valor = e.target.value.replace(/\D/g, ''); // Limita a números
+                  // Cada vez que el usuario vuelve a escribir, limpiamos el error personalizado
+                  expInput.setCustomValidity("");
+                  if (errorFeedback) {
+                      errorFeedback.innerText = "Formato requerido inválido (MM/YY).";
+                  }
+
+                  let valor = e.target.value.replace(/\D/g, ''); 
                   if (valor.length > 2) {
                       e.target.value = valor.substring(0, 2) + '/' + valor.substring(2, 4);
                   } else {
